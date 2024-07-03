@@ -1,0 +1,15 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Mabry", Arial, Helvetica, sans-serif;
+}
+
+/* custom font */
+@font-face {
+  font-family: "Mabry";
+  src: url("../public/fonts/MabryPro-Regular.ttf");
+}
