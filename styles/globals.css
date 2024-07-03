@@ -5,13 +5,13 @@ html {
 }
 
 body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  background-color: #fcf8f3;
+  font-family: "Mabry", Arial, Helvetica, sans-serif;
+  background-color: #fff2e2;
 }
 
 /* custom font */
 @font-face {
-  font-family: "Roboto";
+  font-family: "Mabry";
   src: url("../assets/fonts/MabryPro-Regular.ttf");
 }
 
@@ -21,6 +21,10 @@ body {
 
 .text-pawhub-primary {
   color: #584d51;
+}
+
+.text-pawhub-secondary {
+  color: #ff9934;
 }
 
 .fs-70 {
@@ -41,4 +45,16 @@ body {
 
 .btn-pawhub:hover {
   background-color: #ff9934;
+}
+
+.pulse {
+  animation: pulse 2s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
 }
