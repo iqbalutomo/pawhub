@@ -11,24 +11,12 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!-- global css -->
     <link href="./styles/globals.css" rel="stylesheet" />
   </head>
   <body>
     <!-- navbar -->
-    <div id="navbar">
-      <script>
-        const includeNavbar = () => {
-          fetch("./src/components/navbar.html")
-            .then((res) => res.text())
-            .then((data) => {
-              document.getElementById("navbar").innerHTML = data;
-            })
-            .catch((err) => console.error("Error fetching navbar: ", err));
-        };
-
-        includeNavbar();
-      </script>
-    </div>
+    <div id="navbar"></div>
 
     <!-- main content -->
     <h1>Home Page</h1>
@@ -40,5 +28,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="./src/scripts/index.js"></script>
   </body>
 </html>

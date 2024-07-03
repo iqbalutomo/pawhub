@@ -5,11 +5,21 @@ html {
 }
 
 body {
-  font-family: "Mabry", Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background-color: #fcf8f3;
+  margin: 40px;
 }
 
 /* custom font */
 @font-face {
-  font-family: "Mabry";
+  font-family: "Roboto";
   src: url("../public/fonts/MabryPro-Regular.ttf");
+}
+
+.bg-pawhub-primary {
+  background-color: #584d51;
+}
+
+.active {
+  color: orange !important;
 }
