@@ -1,5 +1,6 @@
-import { renderNavbar } from "./navbar.js";
+import { renderNavbar, renderPage } from "./navbar.js";
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", (e) => {
   renderNavbar();
+  renderPage("home.html", "PawHub | Home");
 });

@@ -3,35 +3,40 @@ const renderNavbar = () => {
     .then((resp) => resp.text())
     .then((data) => {
       document.getElementById("navbar").innerHTML = data;
-      setActiveNav();
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const page = e.target.getAttribute("data-page");
+          const title = e.target.getAttribute("data-title");
+
+          setActiveNav(e);
+          renderPage(page, title);
+        });
+      });
     })
     .catch((err) => console.error("Error fetching navbar: ", err));
 };
 
-const setActiveNav = () => {
-  const path = window.location.pathname;
-  const page = path.split("/").pop();
+const renderPage = (page, title) => {
+  fetch(`./src/pages/${page}`)
+    .then((resp) => resp.text())
+    .then((data) => {
+      document.getElementById("content").innerHTML = data;
+      document.title = title;
 
-  switch (page) {
-    case "index.html":
-      document.getElementById("nav-home").classList.add("active");
-      break;
-    case "about-us.html":
-      document.getElementById("nav-about").classList.add("active");
-      break;
-    case "services.html":
-      document.getElementById("nav-services").classList.add("active");
-      break;
-    case "gallery.html":
-      document.getElementById("nav-gallery").classList.add("active");
-      break;
-    case "contact-us.html":
-      document.getElementById("nav-contact").classList.add("active");
-      break;
-    default:
-      document.getElementById("nav-home").classList.add("active");
-      break;
-  }
+      if (title === "PawHub | Home") {
+        document.getElementById("nav-home").classList.add("active");
+      }
+    })
+    .catch((err) => console.error("Error loading page: ", err));
 };
 
-export { renderNavbar };
+const setActiveNav = (e) => {
+  const navActive = document.querySelector(".active");
+  if (navActive !== null) {
+    navActive.classList.remove("active");
+  }
+  e.target.className = "active nav-link fs-5";
+};
+
+export { renderNavbar, renderPage };

@@ -7,19 +7,38 @@ html {
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   background-color: #fcf8f3;
-  margin: 40px;
 }
 
 /* custom font */
 @font-face {
   font-family: "Roboto";
-  src: url("../public/fonts/MabryPro-Regular.ttf");
+  src: url("../assets/fonts/MabryPro-Regular.ttf");
 }
 
 .bg-pawhub-primary {
   background-color: #584d51;
 }
 
+.text-pawhub-primary {
+  color: #584d51;
+}
+
+.fs-70 {
+  font-size: 70px;
+}
+
+.mt-120 {
+  margin-top: 120px;
+}
+
+.nav-item .nav-link:hover {
+  color: #ff9934 !important;
+}
+
 .active {
-  color: orange !important;
+  color: #ff9934 !important;
+}
+
+.btn-pawhub:hover {
+  background-color: #ff9934;
 }
