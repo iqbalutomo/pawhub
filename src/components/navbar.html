@@ -11,64 +11,52 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <p class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/" style="cursor: pointer">
       <img src="../../assets/images/pawhub-logo-brown-2.png" width="240" />
-    </p>
+    </a>
     <ul class="navbar-nav gap-3">
       <li class="nav-item">
-        <span
-          id="nav-home"
-          role="button"
-          class="nav-link fs-5"
-          data-page="home.html"
-          data-title="PawHub | Home"
-        >
-          Home
-        </span>
+        <a id="nav-home" role="button" class="nav-link fs-5" href="/"> Home </a>
       </li>
       <li class="nav-item">
-        <span
+        <a
           id="nav-about-us"
           role="button"
           class="nav-link fs-5"
-          data-page="about-us.html"
-          data-title="PawHub | About Us"
+          href="/about-us.html"
         >
           About Us
-        </span>
+        </a>
       </li>
       <li class="nav-item">
-        <span
+        <a
           id="nav-services"
           role="button"
           class="nav-link fs-5"
-          data-page="services.html"
-          data-title="PawHub | Services"
+          href="/services.html"
         >
           Services
-        </span>
+        </a>
       </li>
       <li class="nav-item">
-        <span
+        <a
           id="nav-gallery"
           role="button"
           class="nav-link fs-5"
-          data-page="gallery.html"
-          data-title="PawHub | Gallery"
+          href="/gallery.html"
         >
           Gallery
-        </span>
+        </a>
       </li>
       <li class="nav-item">
-        <span
+        <a
           id="nav-contact-us"
           role="button"
           class="nav-link fs-5"
-          data-page="contact-us.html"
-          data-title="PawHub | Contact Us"
+          href="/contact-us.html"
         >
           Contact Us
-        </span>
+        </a>
       </li>
       <div class="navbar-nav ps-4">
         <button
@@ -160,7 +148,7 @@
               />
               <label class="form-check-label text-white-50" for="iAgree">
                 I agree to the
-                <a href="#!" class="text-pawhub-secondary text-decoration-none"
+                <a href="#" class="text-pawhub-secondary text-decoration-none"
                   >terms and conditions</a
                 >
               </label>
@@ -219,23 +207,25 @@
       <form action="#">
         <div class="row gy-3 gy-md-4 overflow-hidden">
           <div class="col-12">
-            <label for="email" class="form-label text-white">Email</label>
+            <label for="email-login" class="form-label text-white">Email</label>
             <input
               type="email"
               class="form-control"
-              name="email"
-              id="email"
+              name="email-login"
+              id="email-login"
               placeholder="name@example.com"
               required
             />
           </div>
           <div class="col-12">
-            <label for="password" class="form-label text-white">Password</label>
+            <label for="password-login" class="form-label text-white"
+              >Password</label
+            >
             <input
               type="password"
               class="form-control"
-              name="password"
-              id="password"
+              name="password-login"
+              id="password-login"
               placeholder="******"
               value=""
               required

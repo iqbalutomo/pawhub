@@ -3,40 +3,35 @@ const renderNavbar = () => {
     .then((resp) => resp.text())
     .then((data) => {
       document.getElementById("navbar").innerHTML = data;
-      document.querySelectorAll(".nav-link").forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const page = e.target.getAttribute("data-page");
-          const title = e.target.getAttribute("data-title");
-
-          setActiveNav(e);
-          renderPage(page, title);
-        });
-      });
+      setActiveLink();
     })
     .catch((err) => console.error("Error fetching navbar: ", err));
 };
 
-const renderPage = (page, title) => {
-  fetch(`./src/pages/${page}`)
-    .then((resp) => resp.text())
-    .then((data) => {
-      document.getElementById("content").innerHTML = data;
-      document.title = title;
+function setActiveLink() {
+  const path = window.location.pathname;
+  const page = path.split("/").pop();
 
-      if (title === "PawHub | Home") {
-        document.getElementById("nav-home").classList.add("active");
-      }
-    })
-    .catch((err) => console.error("Error loading page: ", err));
-};
-
-const setActiveNav = (e) => {
-  const navActive = document.querySelector(".active");
-  if (navActive !== null) {
-    navActive.classList.remove("active");
+  switch (page) {
+    case "index.html":
+      document.getElementById("nav-home").classList.add("active");
+      break;
+    case "about-us.html":
+      document.getElementById("nav-about-us").classList.add("active");
+      break;
+    case "services.html":
+      document.getElementById("nav-services").classList.add("active");
+      break;
+    case "gallery.html":
+      document.getElementById("nav-gallery").classList.add("active");
+      break;
+    case "contact-us.html":
+      document.getElementById("nav-contact-us").classList.add("active");
+      break;
+    default:
+      document.getElementById("nav-home").classList.add("active");
+      break;
   }
-  e.target.className = "active nav-link fs-5";
-};
+}
 
-export { renderNavbar, renderPage };
+export { renderNavbar };
