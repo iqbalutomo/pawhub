@@ -2,7 +2,7 @@ import { renderNavbar, renderPage } from "./navbar.js";
 
 document.addEventListener("DOMContentLoaded", (e) => {
   renderNavbar();
-  renderPage("services.html", "PawHub | Home");
+  renderPage("contact-us.html", "PawHub | Home");
 });
 
 // floating button
