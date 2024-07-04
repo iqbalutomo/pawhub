@@ -11,19 +11,21 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="/" style="cursor: pointer">
-      <img src="../../assets/images/pawhub-logo-brown-2.png" width="240" />
+    <a class="navbar-brand" href="./" style="cursor: pointer">
+      <img src="assets/images/pawhub-logo-brown-2.png" width="240" />
     </a>
     <ul class="navbar-nav gap-3">
       <li class="nav-item">
-        <a id="nav-home" role="button" class="nav-link fs-5" href="/"> Home </a>
+        <a id="nav-home" role="button" class="nav-link fs-5" href="./">
+          Home
+        </a>
       </li>
       <li class="nav-item">
         <a
           id="nav-about-us"
           role="button"
           class="nav-link fs-5"
-          href="/about-us.html"
+          href="./about-us.html"
         >
           About Us
         </a>
@@ -33,7 +35,7 @@
           id="nav-services"
           role="button"
           class="nav-link fs-5"
-          href="/services.html"
+          href="./services.html"
         >
           Services
         </a>
@@ -43,7 +45,7 @@
           id="nav-gallery"
           role="button"
           class="nav-link fs-5"
-          href="/gallery.html"
+          href="./gallery.html"
         >
           Gallery
         </a>
@@ -53,7 +55,7 @@
           id="nav-contact-us"
           role="button"
           class="nav-link fs-5"
-          href="/contact-us.html"
+          href="./contact-us.html"
         >
           Contact Us
         </a>
@@ -100,37 +102,43 @@
           </div>
         </div>
       </div>
-      <form action="#">
+      <form action="./register.php" method="post">
         <div class="row gy-3 gy-md-4 overflow-hidden">
           <div class="col-12">
-            <label for="firstName" class="form-label text-white">Name</label>
+            <label for="name-register" class="form-label text-white"
+              >Name</label
+            >
             <input
               type="text"
               class="form-control"
-              name="name"
-              id="name"
+              name="name-register"
+              id="name-register"
               placeholder="your name"
               required
             />
           </div>
           <div class="col-12">
-            <label for="email" class="form-label text-white">Email</label>
+            <label for="email-register" class="form-label text-white"
+              >Email</label
+            >
             <input
               type="email"
               class="form-control"
-              name="email"
-              id="email"
+              name="email-register"
+              id="email-register"
               placeholder="name@example.com"
               required
             />
           </div>
           <div class="col-12">
-            <label for="password" class="form-label text-white">Password</label>
+            <label for="password-register" class="form-label text-white"
+              >Password</label
+            >
             <input
               type="password"
               class="form-control"
-              name="password"
-              id="password"
+              name="password-register"
+              id="password-register"
               placeholder="******"
               value=""
               required
@@ -156,7 +164,7 @@
           </div>
           <div class="col-12">
             <div class="d-grid">
-              <button class="btn btn-lg btn-dark" type="submit">
+              <button class="btn btn-lg btn-dark" type="submit" name="register">
                 Register Now
               </button>
             </div>
@@ -204,7 +212,7 @@
           </div>
         </div>
       </div>
-      <form action="#">
+      <form action="./login.php" method="post">
         <div class="row gy-3 gy-md-4 overflow-hidden">
           <div class="col-12">
             <label for="email-login" class="form-label text-white">Email</label>
@@ -233,7 +241,9 @@
           </div>
           <div class="col-12">
             <div class="d-grid">
-              <button class="btn btn-lg btn-dark" type="submit">Login</button>
+              <button class="btn btn-lg btn-dark" type="submit" name="login">
+                Login
+              </button>
             </div>
           </div>
         </div>
