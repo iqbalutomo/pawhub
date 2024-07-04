@@ -1,5 +1,5 @@
 const renderNavbar = () => {
-  fetch("./src/components/navbar.html")
+  fetch("./src/components/navbar.php")
     .then((resp) => resp.text())
     .then((data) => {
       document.getElementById("navbar").innerHTML = data;
@@ -13,7 +13,7 @@ function setActiveLink() {
   const page = path.split("/").pop();
 
   switch (page) {
-    case "index.html":
+    case "index.php":
       document.getElementById("nav-home").classList.add("active");
       break;
     case "about-us.html":

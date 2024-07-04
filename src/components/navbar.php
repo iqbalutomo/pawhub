@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$user = $_SESSION['user'];
+?>
+
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <button
@@ -60,24 +66,37 @@
           Contact Us
         </a>
       </li>
-      <div class="navbar-nav ps-4">
-        <button
-          type="button"
-          class="btn btn-ghost fs-5"
-          data-bs-toggle="modal"
-          data-bs-target="#modal-login"
-        >
-          Login
-        </button>
-        <button
-          type="button"
-          class="btn btn-pawhub bg-pawhub-primary text-white fs-5 rounded-5"
-          data-bs-toggle="modal"
-          data-bs-target="#modal-register"
-        >
-          Lets donate
-        </button>
-      </div>
+      <?php if (isset($_SESSION['user'])): ?>
+        <div class="dropdown">
+          <button class="btn btn-pawhub-primary dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <?php echo $user['name']; ?>
+          </button>
+          <ul class="dropdown-menu bg-pawhub-primary">
+            <li><a class="dropdown-item text-white" href="#"><?php echo $user['name']; ?></a></li>
+            <li><a class="dropdown-item text-white" href="#"><?php echo $user['email']; ?></a></li>
+            <li><a class="dropdown-item text-white" href="#">Role: User</a></li>
+          </ul>
+        </div>
+      <?php else: ?>     
+        <div class="navbar-nav ps-4">
+          <button
+            type="button"
+            class="btn btn-ghost fs-5"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-login"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="btn btn-pawhub bg-pawhub-primary text-white fs-5 rounded-5"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-register"
+          >
+            Lets donate
+          </button>
+        </div>
+      <?php endif; ?>
     </ul>
   </div>
 </nav>

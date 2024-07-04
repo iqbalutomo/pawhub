@@ -19,7 +19,7 @@ if (isset($_POST['register'])) {
 
         if ($result->num_rows > 0) {
             // direct page with error params
-            header("Location: ./index.html?error=email_exists");
+            header("Location: ./index.php?error=email_exists");
             exit();
         } else {
             $insertQuery = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
@@ -29,7 +29,7 @@ if (isset($_POST['register'])) {
 
                 if ($stmt->execute()) {
                     // direct page with success params
-                    header("Location: ./index.html?success=registration");
+                    header("Location: ./index.php?success=registration");
                 } else {
                     echo "Error: " . $conn->error;
                 }

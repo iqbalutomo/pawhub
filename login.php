@@ -1,6 +1,8 @@
 <?php
 include './src/databases/db.php';
 
+session_start();
+
 if (isset($_POST['login'])) {
     $email = $_POST['email-login'];
     $password = $_POST['password-login'];
@@ -19,16 +21,23 @@ if (isset($_POST['login'])) {
             $user = $result->fetch_assoc();
             // verification password
             if (password_verify($password, $user['password'])) {
+                // add session
+                $_SESSION['user'] = array(
+                    'user_id' => $user['user_id'],
+                    'name' => $user['name'],
+                    'email' => $user['email']
+                );
+                
                 // direct on page with success params
-                header("Location: ./index.html?success=login");
+                header("Location: ./index.php?success=login");
                 exit();
             } else {
                 // direct on page with error params
-                header("Location: ./index.html?error=invalid_login");
+                header("Location: ./index.php?error=invalid_login");
                 exit();
             }
         } else {
-            header("Location: ./index.html?error=invalid_login");
+            header("Location: ./index.php?error=invalid_login");
             exit();
         }
 
