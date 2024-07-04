@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
 });
 
 // floating button
-var floater = document.getElementById("floater");
-var lastScrollTop = 0;
+const floater = document.getElementById("floater");
+const lastScrollTop = 0;
 
 window.addEventListener("scroll", function () {
-  var scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
   if (scrollTop > lastScrollTop) {
     // Scrolling down
