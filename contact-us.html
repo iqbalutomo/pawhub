@@ -15,13 +15,56 @@
     <link href="./styles/globals.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- toast responses -->
+    <div
+      class="position-fixed bg-opacity-100 top-0 translate-middle-x start-50 p-3 align-items-center"
+      style="z-index: 11"
+    >
+      <!-- toast success contact form -->
+      <div
+        id="successContactFormToast"
+        class="toast top-0 align-items-center text-bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Sent. Thank you!</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+
+      <!-- toast failed contact form -->
+      <div
+        id="errorContactFormToast"
+        class="toast top-0 align-items-center text-bg-danger border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Failed to sent!</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+
     <div class="preloader"></div>
     <div class="container">
       <!-- dynamic navbar -->
       <div id="navbar"></div>
 
       <!-- content -->
-      <!-- Contact Form -->
       <section id="contact-form" style="margin: 80px 0">
         <div class="container">
           <div class="row justify-content-md-center">
@@ -47,42 +90,46 @@
                   </div>
                 </div>
               </div>
-              <form action="#">
+              <form action="./contact_form.php" method="post">
                 <div class="row gy-3 gy-md-4 overflow-hidden">
                   <div class="col-12">
-                    <label for="firstName" class="form-label text-white"
+                    <label for="name-contact-form" class="form-label text-white"
                       >Name</label
                     >
                     <input
                       type="text"
                       class="form-control"
-                      name="name"
-                      id="name"
+                      name="name-contact-form"
+                      id="name-contact-form"
                       placeholder="Your Name"
                       required
                     />
                   </div>
                   <div class="col-12">
-                    <label for="email" class="form-label text-white"
+                    <label
+                      for="email-contact-form"
+                      class="form-label text-white"
                       >Email</label
                     >
                     <input
                       type="email"
                       class="form-control"
-                      name="email"
-                      id="email"
+                      name="email-contact-form"
+                      id="email-contact-form"
                       placeholder="name@example.com"
                       required
                     />
                   </div>
                   <div class="col-12">
-                    <label for="messages" class="form-label text-white"
+                    <label
+                      for="messages-contact-form"
+                      class="form-label text-white"
                       >Messages</label
                     >
                     <textarea
                       class="form-control"
-                      name="messages"
-                      id="messages"
+                      name="messages-contact-form"
+                      id="messages-contact-form"
                       placeholder="Write a message here.."
                       rows="4"
                       value=""
@@ -90,7 +137,11 @@
                   </div>
                   <div class="col-12">
                     <div class="d-grid">
-                      <button class="btn btn-lg btn-dark" type="submit">
+                      <button
+                        class="btn btn-lg btn-dark"
+                        type="submit"
+                        name="contact-form"
+                      >
                         Submit
                       </button>
                     </div>

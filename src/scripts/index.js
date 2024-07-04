@@ -1,33 +1,9 @@
 import { renderNavbar } from "./navbar.js";
+import { handleResponses } from "./responses.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   renderNavbar();
-
-  // toast register responses
-  var urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has("error", "email_exists")) {
-    var toastElement = document.getElementById("emailExistsToast");
-    var toast = new bootstrap.Toast(toastElement);
-    toast.show();
-  }
-  if (urlParams.has("success", "registration")) {
-    var toastElement = document.getElementById("successRegisterToast");
-    var toast = new bootstrap.Toast(toastElement);
-    toast.show();
-  }
-
-  // toast login responses
-  var urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has("error", "invalid_login")) {
-    var toastElement = document.getElementById("invalidToast");
-    var toast = new bootstrap.Toast(toastElement);
-    toast.show();
-  }
-  if (urlParams.has("success", "login")) {
-    var toastElement = document.getElementById("successLoginToast");
-    var toast = new bootstrap.Toast(toastElement);
-    toast.show();
-  }
+  handleResponses();
 });
 
 // preloader

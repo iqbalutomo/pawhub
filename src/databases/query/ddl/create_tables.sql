@@ -42,3 +42,12 @@ CREATE TABLE donation_target(
 );
 -- result:
 -- Query OK, 0 rows affected (0.011 sec)
+
+CREATE TABLE contact_form(
+    contact_form_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(40) NOT NULL,
+    messages VARCHAR(255) NOT NULL DEFAULT 'No messages'
+);
+-- result:
+-- Query OK, 0 rows affected (0.012 sec)
