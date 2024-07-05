@@ -118,3 +118,8 @@ body {
   opacity: 1;
   transform: opacity 1s linear;
 }
+
+.dropdown:hover > .dropdown-menu .dropdown-item:hover {
+  display: block;
+  background: #2f2b2c;
+}
