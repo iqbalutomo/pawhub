@@ -75,6 +75,7 @@ $user = $_SESSION['user'];
             <li><a class="dropdown-item text-white" href="#"><?php echo $user['name']; ?></a></li>
             <li><a class="dropdown-item text-white" href="#"><?php echo $user['email']; ?></a></li>
             <li><a class="dropdown-item text-white" href="#">Role: User</a></li>
+            <li><a class="dropdown-item text-white" href="./logout.php">Logout</a></li>
           </ul>
         </div>
       <?php else: ?>     
