@@ -51,6 +51,10 @@ body {
   background-color: #ff9934;
 }
 
+.btn-pawhub:disabled {
+  background-color: #584d51;
+}
+
 .card {
   transition: 0.3s;
 }
@@ -117,4 +121,30 @@ body {
   z-index: 9999;
   opacity: 1;
   transform: opacity 1s linear;
+}
+
+/* donate */
+.btn-currency,
+.btn-amount {
+  width: 100%;
+}
+
+.btn-currency:hover {
+  background-color: #584d51;
+}
+
+.btn-amount:hover {
+  background-color: #ff9934;
+}
+
+.btn-currency.btn-selected {
+  background-color: #584d51;
+  color: white;
+  border: 0;
+}
+
+.btn-amount.btn-selected {
+  background-color: #ff9934;
+  color: white;
+  border: 0;
 }
