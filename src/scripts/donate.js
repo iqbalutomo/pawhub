@@ -174,9 +174,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     collectedDonate.textContent = updateCollected;
 
-    // update progress bar
-    updateProgressBar(collected, needed);
-
     // remove modal
     bootstrap.Modal.getInstance(
       document.getElementById("modal-payment")
