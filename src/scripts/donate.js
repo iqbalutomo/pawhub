@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // set collected and neede value (asume by API)
   // note: format depend on user input paw (asume Rupiah)
   const needed = neededDonate.textContent.replace(/[^0-9]/g, "");
-  let collected = collectedDonate.textContent.replace(/[^0-9]/g, "");
+  let collected = parseInt(collectedDonate.textContent.replace(/[^0-9]/g, ""));
   let selectedAmount;
   let selectedCurrency;
 
@@ -183,6 +183,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }).format(Number(collected) + convertedAmount);
 
     collectedDonate.textContent = updateCollected;
+
+    collected += convertedAmount;
 
     // remove modal
     bootstrap.Modal.getInstance(
