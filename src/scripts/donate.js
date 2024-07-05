@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // converting currency
-  const convertCurrency = (currency, value) => {
+  const convertCurrency = (currency, value, formatRupiah) => {
     switch (currency) {
       case "Dollar ($)":
         selectedCurrency = currency;
@@ -63,7 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }).format(value);
       case "Rupiah (Rp)":
         selectedCurrency = currency;
-        return formatToRupiah(Number(value));
+        return formatRupiah === "Rp"
+          ? new Intl.NumberFormat("id-ID", {
+              style: "currency",
+              currency: "IDR",
+            }).format(value)
+          : formatToRupiah(Number(value));
+
       default:
         break;
     }
@@ -147,7 +153,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // input payment data
     document.getElementById("email-payment").textContent = email;
-    document.getElementById("amount-payment").textContent = selectedAmount;
+    document.getElementById("amount-payment").textContent = convertCurrency(
+      selectedCurrency,
+      selectedAmount,
+      "Rp"
+    );
 
     donationForm.reset();
     checkDonateButtonState();
