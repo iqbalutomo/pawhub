@@ -124,7 +124,7 @@ $email = $_SESSION['email'];
               href="#donate"
               class="btn btn-dark py-2 px-5 fs-4 rounded-5"
             >
-              Donate
+              Lets Donate!
             </a>
           </div>
           <div class="pulse">

@@ -94,7 +94,7 @@ $user = $_SESSION['user'];
             data-bs-toggle="modal"
             data-bs-target="#modal-register"
           >
-            Lets donate
+            Register
           </button>
         </div>
       <?php endif; ?>
